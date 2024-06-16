@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытка для моей девушки</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ff6ed485;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+            transform: scale(0);
+            animation: popin 0.5s forwards;
+        }
+        @keyframes popin {
+            to {
+                transform: scale(1);
+            }
+        }
+        .card h1 {
+            color: #ff6b6b;
+        }
+        .card p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b6b;
+            position: relative;
+            margin: 20px auto;
+            transform: rotate(-45deg);
+            animation: beat 1s infinite;
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+        }
+        .button {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ff4b4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 style="position: relative; top: -20px;">для моей девочки💋</h1>
+        <div class="heart"></div>
+        <p style="position: relative; top: 20px;">ты — самое лучшее, что произошло в моей жизни.</p>
+        <button class="button" onclick="showMessage()" style="position: relative; top: 10px;">жмякни<3</button>
+        <p id="hiddenMessage" style="display:none; color: #ff6b6b; font-size: 1.2em; margin-top: 20px; position: relative; top: 10px;"> ты самое лучшее, что было со мной, и я очень сильно люблю и дорожу тобой ❤️‍🩹</p>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
